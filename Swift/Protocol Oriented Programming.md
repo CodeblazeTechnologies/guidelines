@@ -11,7 +11,7 @@ A protocol defines a blueprint of methods, properties, and other requirements th
 ### What are the caveats in Object Oriented Programming?
 - Abstraction, Encapsulation, Inheritance & Polymorphism are the base of OOPs but are **only supported by Object types (ie. class)**, value types like structure and enums cannot utilize these features and hence are just used as data store.
 
-- **Value types are thread-safe** but due to the above mentioned short coming of OOPs in using value types efficiently we have to use Object types and then tackle thread safety with objects(references).
+- **Value types are thread-safe** but due to the above mentioned short coming of OOPs in using value types inefficiently we have to use Object types and then tackle thread safety with objects(references).
 
 
 ### How Protocol Oriented Programming makes the difference?
@@ -32,7 +32,9 @@ Your boss comes in and demands creating an application were there are two kinda 
 
 ![OOPs issues](https://github.com/CodeblazeTechnologies/guidelines/blob/master/Swift/support_images/issue_in_oops.png)
 
-But we are making every Painter a Sculptor, which forces irrelevant features of Sculptor in a Painter.
+**But we are making every Painter a Sculptor, which forces irrelevant features of Sculptor in a Painter.**
+
+
 
 
 **Solution in POPs:**
@@ -44,7 +46,7 @@ But we are making every Painter a Sculptor, which forces irrelevant features of 
 ![POPs design](https://github.com/CodeblazeTechnologies/guidelines/blob/master/Swift/support_images/pop_solution.png)
 
 
-**Here we define a struct named OnlyPainter which conforms to Painter protocol. Then We defined another struct PainterAndSculptor which conform to Painter and Sculptor protocol so that it can implement the required functionality of both.
+**Here we define a struct named OnlyPainter which conforms to Painter protocol. Then We defined another struct PainterAndSculptor which conform to Painter and Sculptor protocol so that it can implement the required functionality of both.**
 
 ![Only Painter](https://github.com/CodeblazeTechnologies/guidelines/blob/master/Swift/support_images/OnlyPainter.png)
 
