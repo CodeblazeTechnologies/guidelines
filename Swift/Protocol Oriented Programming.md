@@ -23,4 +23,5 @@ Your boss comes in and demands creating an application were there are two kinda 
 
 - Considering the factor that *during the course of time more actors will be added to the system*, we consider creating an Artist class and then inherit Painter and Singer from it.
 
-Artist
+Here a Painter and a Sculptor inherits from their parent, Artist, they both get the common features implemented by the Artist implicitly.
+!(https://github.com/CodeblazeTechnologies/guidelines/blob/master/Swift/support_images/pop_solution.png)
