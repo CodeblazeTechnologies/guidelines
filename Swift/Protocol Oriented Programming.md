@@ -28,6 +28,7 @@ Your boss comes in and demands creating an application were there are two kinda 
 ![OOPs design](https://github.com/CodeblazeTechnologies/guidelines/blob/master/Swift/support_images/pop_solution.png)
 
 
+
 **Now if the requirement demands that some painter could be an sculptor too then the inheritance tree would look something like this**
 
 ![OOPs issues](https://github.com/CodeblazeTechnologies/guidelines/blob/master/Swift/support_images/issue_in_oops.png)
