@@ -89,9 +89,87 @@ Now we are making our protocol Duck extends to protocol Swimable, this will give
         var name: String {get}
     }
     
+    
+**Extending Protocols With Default Implementations**
+
+As every Duck can swim, lets provide a default implementation to it. So whenever we create a Duck, it will by default has the implemented swim() method.
+
+    extension Duck
+    {
+        func swim()
+        {
+           print("I am a duck who can swim!")
+        }
+    }
+    
 I was very happy about what I created, so I went to my boss and showed him. He really liked the idea of using protocols over the concrete type. He further added that now he wants me to do the following:
 
  - Create three kinda ducks
-   - OrdinaryDuck
-   - RubberDuck
-   - NinjaDuck
+   - OrdinaryDuck who can Quack
+   - RubberDuck who can Quack
+   - NinjaDuck who canNOT Quack
+   
+Lets create Quackable protocol and Duck
+                
+    protocol Quackable
+    {
+        func quack()
+    }
+   
+**Ordinary Duck**
+
+    struct OrdinaryDuck: Duck, Quackable
+    {
+        var name = "Ordinary Duck"
+    }
+
+**Rubber Duck**
+
+    struct RubberDuck: Duck, Quackable
+    {
+        var name = "Rubber Duck"
+    }
+
+**Ninja Duck**
+
+    struct NinjaDuck: Duck
+    {
+       var name = "Ninja Duck"
+    }
+    
+ **Here OrdinaryDuck and RubberDuck extends Quackable but not the NinjaDuck, so there are two ways we can implement the Quack method**
+  
+  - Implement quck() method in OrdinaryDuck and RubberDuck individually.
+  - Implement quck() method in Duck.
+  - Implement quck() method in a subtype that conforms to certain type.
+  
+  **Lets see which of the above option can work for us**
+  
+  - Implementation of quck() method in OrdinaryDuck and RubberDuck individually *would create an ambiguity, if the implementation is default.*
+  - Implement quck() method in Duck would also *make NinjaDuck to quack, which we don't want*
+  - Implement quck() method in a subtype that conforms to certain type is *the option that I would choose to go further with.*
+  
+ **Extending Protocols With Default Implementations for a subset who conforms to certain requirements**
+ 
+    extension Duck where Self: Quackable
+    {
+       func quack()
+       {
+          print("Quack")
+       }
+    }
+ 
+ After I have shown this to my boss, he was quite impressed and put me up against another challenge, he says that OrdinaryDuck does quack but RubberDuck should not quack but squeek....
+ 
+ 
+ **Overriding Default Behavior**
+ 
+     struct RubberDuck: Duck, Quackable
+    {
+        var name = "Rubber Duck"
+     
+       func quack()
+      {
+          print("Squeek")
+      }
+    }
