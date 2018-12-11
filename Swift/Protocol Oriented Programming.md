@@ -40,7 +40,7 @@ Your boss comes in and demands creating an application were there are two kinda 
 
 **Solution in POPs:**
 
-- The philosophy of POPs, *Start with a Protocol instead of a class*
+- The philosophy of POPs, *Start with a Protocol instead of a concrete type*
 
 **We declared three protocols here Artist, Painter and Sculptor. Painter and Sculptor inherits from Artist protocol. Each protocol has declared their requirements (ie. methods, properties)**
 
@@ -57,3 +57,41 @@ Your boss comes in and demands creating an application were there are two kinda 
 Protocol is a much cleaner approact against the inheritance. None of them are leaking any extra features into each others boundary. This is a Protocol-Oriented approach where the major things are driven by the protocols.
 
 An advantage with protocols is that they can be extended to provide a default implementation of its requirements. For example, if some requirements of the protocol have common implementation across all of its conforming types, those requirements can be implemented by the protocol itself. All the conforming types get the default implementation for free and they do not need to implement it again.
+
+
+
+## Lets dive in!!
+ Its monday morning and suddenly I get a call from your boss asking to create a game. He further adds that this game revolves around a Duck. Thats all what he said.....
+ 
+### First step:
+ So as per the philosophy of POPs, *Start with a Protocol instead of a concrete type*, I create a protocol Duck instead of class or struct Duck.
+
+    protocol Duck
+    {
+        var name: String {get}
+    }
+
+Now I further thought that all Duck can swim, so I created protocol Swimable
+
+
+    protocol Swimable
+    {
+       func swim()
+    }
+
+
+**Protocol extending Protocol**
+
+Now we are making our protocol Duck extends to protocol Swimable, this will give every Duck the ability to Swim.
+
+    protocol Duck: Swimable
+    {
+        var name: String {get}
+    }
+    
+I was very happy about what I created, so I went to my boss and showed him. He really liked the idea of using protocols over the concrete type. He further added that now he wants me to do the following:
+
+ - Create three kinda ducks
+   - OrdinaryDuck
+   - RubberDuck
+   - NinjaDuck
