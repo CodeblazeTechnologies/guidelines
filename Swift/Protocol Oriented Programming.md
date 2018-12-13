@@ -19,7 +19,7 @@ A protocol defines a blueprint of methods, properties, and other requirements th
 
 Your boss comes in and demands creating an application were there are two kinda actors Painter and Singer, he further adds that during the course of time more actors will be added to the system. (deliberately I have used the word *actors* and NOT *objects* as that may be misinterpreted with reference type)
 
-**Solution in OOPs:**
+#### Solution in OOPs:
 
 - Considering the factor that *during the course of time more actors will be added to the system*, we consider creating an Artist class and then inherit Painter and Singer from it.
 
@@ -38,7 +38,7 @@ Your boss comes in and demands creating an application were there are two kinda 
 
 
 
-**Solution in POPs:**
+#### Solution in POPs:
 
 - The philosophy of POPs, *Start with a Protocol instead of a concrete type*
 
@@ -80,7 +80,7 @@ Now I further thought that all Duck can swim, so I created protocol Swimable
     }
 
 
-**Protocol extending Protocol**
+#### Protocol extending Protocol
 
 Now we are making our protocol Duck extends to protocol Swimable, this will give every Duck the ability to Swim.
 
@@ -90,7 +90,7 @@ Now we are making our protocol Duck extends to protocol Swimable, this will give
     }
     
     
-**Extending Protocols With Default Implementations**
+#### Extending Protocols With Default Implementations
 
 As every Duck can swim, lets provide a default implementation to it. So whenever we create a Duck, it will by default has the implemented swim() method.
 
@@ -149,7 +149,7 @@ Lets create Quackable protocol and Duck
   - Implement quck() method in Duck would also *make NinjaDuck to quack, which we don't want*
   - Implement quck() method in a subtype that conforms to certain type is *the option that I would choose to go further with.*
   
- **Extending Protocols With Default Implementations for a subset who conforms to certain requirements**
+ #### Extending Protocols With Default Implementations for a subset who conforms to certain requirements
  
     extension Duck where Self: Quackable
     {
@@ -162,7 +162,7 @@ Lets create Quackable protocol and Duck
  After I have shown this to my boss, he was quite impressed and put me up against another challenge, he says that OrdinaryDuck does quack but RubberDuck should not quack but squeek....
  
  
- **Overriding Default Behavior**
+ #### Overriding Default Behavior
  
      struct RubberDuck: Duck, Quackable
     {
@@ -173,3 +173,30 @@ Lets create Quackable protocol and Duck
           print("Squeek")
       }
     }
+    
+  
+Boss was impressed!! But when you think its the end of challenges, actually its the beginning. Boss was so impressed that he asked me to allot unique special powers to Ducks.....Huuhhhhhhhh.... Back to work.  
+    But you know guys what..... I am loving my job with this new POP power........
+    
+ 
+### PATs the way!!
+ PAT means Protocol with Associated Type, in simple terms its a protocol with generics. Lets take a look how it's gonna resolve the current scenario.
+ 
+Lets first ensure that Power is made generic and it has an init function
+
+    protocol Initializable 
+    {
+        init()
+    }
+    
+ 
+        
+ 
+ 
+ 
+ 
+    
+    
+  **The above is a simple example to showcase the power of Protocol Oriented Programming but it has lot in store.**
+  
+  Add OOPS is still a great help
