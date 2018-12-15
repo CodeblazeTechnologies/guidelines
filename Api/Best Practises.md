@@ -321,7 +321,7 @@ All exceptions should be mapped in an error payload. Here is an example how a JS
 
 
 
-### Credits
+### References
 Restful Api Design by Matthias Biehl
 
 RESTful Web APIs: Services for a Changing World by Leonard Richardson, Michael Amundsen
