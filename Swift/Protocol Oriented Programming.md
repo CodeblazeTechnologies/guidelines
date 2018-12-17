@@ -174,29 +174,3 @@ Lets create Quackable protocol and Duck
       }
     }
     
-  
-Boss was impressed!! But when you think its the end of challenges, actually its the beginning. Boss was so impressed that he asked me to allot unique special powers to Ducks.....Huuhhhhhhhh.... Back to work.  
-    But you know guys what..... I am loving my job with this new POP power........
-    
- 
-### PATs the way!!
- PAT means Protocol with Associated Type, in simple terms its a protocol with generics. Lets take a look how it's gonna resolve the current scenario.
- 
-Lets first ensure that Power is made generic and it has an init function
-
-    protocol Initializable 
-    {
-        init()
-    }
-    
- 
-        
- 
- 
- 
- 
-    
-    
-  **The above is a simple example to showcase the power of Protocol Oriented Programming but it has lot in store.**
-  
-  Add OOPS is still a great help
