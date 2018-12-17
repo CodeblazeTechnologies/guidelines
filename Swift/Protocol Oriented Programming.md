@@ -226,8 +226,8 @@ Lets create Quackable protocol and Duck
     
   This will restrict the associated types to Power.
   
-  **The above are simple examples to showcase the power of Protocol Oriented Programming but it has lot in store.**
+  **The above are simple examples to showcase the power of Protocol Oriented Programming but it has lot more in store.**
 
- **Notes**
- 
+
+ #### Notes
   On the ending note I would like to add that **Protocol Oriented Programming is NO silver bullet**, **Object Oriented Programming** still holds a very important place when it comes to design a software solution. We have to weigh the situation, then decide how, when and where we need to combine POPs and OOPs to produce a better solution.
