@@ -174,3 +174,64 @@ Lets create Quackable protocol and Duck
       }
     }
     
+
+### PATs the way!!
+ PAT means Protocol with Associated Type, in simple terms its a protocol with generics. Lets take a look how it's gonna add value to the above scenario.
+ 
+  Lets give our Ducks some powers..............
+  
+  **Power Trait**
+    
+    protocol PowerTrait
+    {
+       associatedtype Pow
+       var power: Pow { get set }
+    }
+
+  **Pokemon**
+  
+    struct Pikachu: PowerTrait
+    {
+       typealias Pow = Int
+       var power = Int()
+    }
+
+    var pika = Pikachu()
+    print(pika.power)
+    
+ We can ease it with this below syntax
+   
+    struct Pikachu: PowerTrait
+    {
+       var power = Int()
+    }
+    
+  **Output**
+  
+    0
+    
+ My boss was impressed with PAT but was upset that how come Integer can be a power in context of Pokemon..... So I thought of implementing some kinda constraint.
+ 
+  **Power**
+  
+    protocol Power{}
+    
+  **Power Trait**
+  
+    protocol PowerTrait
+    {
+       associatedtype Pow: Power
+       var power: Pow { get set }
+    }
+    
+  This will restrict the associated types to Power.
+  
+  **The above are simple examples to showcase the power of Protocol Oriented Programming but it has lot in store.**
+
+ 
+ 
+    
+    
+  
+  
+  Add OOPS is still a great help
